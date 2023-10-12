@@ -1,1 +1,4 @@
-a
+Setup conda command in terminal vscode
+
+- Ctrl + shift + P -> python: select interpreter -> choose the one has conda.exe
+==> Reset terminal
