@@ -74,3 +74,6 @@ urlpatterns=[
 ```
 
 - Template : similar to template engine in Nodejs, can generate HTML page and use **_template tags_** to inject dynamic content
+
+
+- 

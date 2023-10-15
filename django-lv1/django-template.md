@@ -79,3 +79,53 @@ STATICFILES_DIRS=[
   </body>
 </html>
 ```
+
+- How to use if, for loop in template
+
+```python
+# views.py
+
+def index(request):
+  # Access the AccessRecord object
+    webpages_list = AccessRecord.objects.order_by('date')
+    # create a dict with the AccessRecord data
+    date_dict = {'access_records':webpages_list}
+    return render(request,'first_app/index.html',context=date_dict)
+```
+
+```html
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django level 2</title>
+    <link rel="stylesheet" href='{% static "css/mystyle.css" %}' />
+  </head>
+  <body>
+    <h1>Hi welcome to Django Level two!</h1>
+    <h2>Here are your access record:</h2>
+
+    <div class="djangtwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name}}</td>
+          <td>{{ acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      {% else %}
+      <p>NO ACCESS RECORDS FOUND</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
+```
