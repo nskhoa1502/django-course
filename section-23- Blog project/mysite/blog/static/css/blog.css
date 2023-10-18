@@ -8,6 +8,11 @@
   font-size: 1.5rem;
 }
 
+.centerstage {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .loader {
   position: fixed;
   filter: hue-rotate(0deg);
@@ -43,4 +48,18 @@
   100% {
     filter: hue-rotate(360deg);
   }
+}
+
+nav {
+  width: 100vw;
+  /* background-color: #08f; */
+}
+
+.nav-container {
+  /* background-color: red; */
+  /* color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
