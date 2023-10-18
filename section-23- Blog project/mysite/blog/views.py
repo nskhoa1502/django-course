@@ -3,6 +3,7 @@ from django.views.generic import (TemplateView,ListView,DetailView,CreateView,Up
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required # for function based views
+from django.utils import timezone
 from blog.models import Post,Comment
 from blog.forms import PostForm,CommentForm
 # Create your views here.
@@ -16,7 +17,7 @@ class PostListView(ListView):
 
     # Doing a SQL query on the model => __lte is less than or equal to => -published_date is descending order
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now().order_by('-published_date'))
+        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
 class PostDetailView(DetailView):
     model = Post
