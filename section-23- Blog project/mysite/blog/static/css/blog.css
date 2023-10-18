@@ -63,3 +63,23 @@ nav {
   justify-content: space-between;
   padding: 10px 20px;
 }
+
+.postdate {
+  text-align: center;
+}
+
+.posttitle {
+  font-family: "Russo One", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.postcontent {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+
+.btn-comment {
+  position: absolute;
+  right: 0px;
+}

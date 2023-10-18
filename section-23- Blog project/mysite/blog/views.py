@@ -52,7 +52,7 @@ class DraftListView(LoginRequiredMixin,ListView):
     def get_queryset(self):
         # __isnull is a Django convention for checking if something is null
         # If the published_date is null, then we know that the post is a draft
-        return Post.objects.filter(published_date__isnull=True).order_by('create_date')
+        return Post.objects.filter(published_date__isnull=True).order_by('created_date')
     
 
 # ===============================
