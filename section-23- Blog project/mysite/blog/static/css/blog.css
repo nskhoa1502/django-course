@@ -63,6 +63,19 @@ nav {
   justify-content: space-between;
   padding: 10px 20px;
 }
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.blog_posts {
+  position: relative;
+}
 
 .postdate {
   text-align: center;
@@ -72,6 +85,7 @@ nav {
   font-family: "Russo One", sans-serif;
   font-size: 3rem;
   text-align: center;
+  width: 100%;
 }
 
 .postcontent {
@@ -82,4 +96,12 @@ nav {
 .btn-comment {
   position: absolute;
   right: 0px;
+}
+
+.save {
+  width: 80px;
+}
+
+.save-comment {
+  width: 150px;
 }

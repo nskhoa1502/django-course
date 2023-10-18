@@ -31,24 +31,24 @@
 
 </head>
 
-<body class="loader">
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg techfont custom-navbar ">
         <div class="nav-container">
-            <ul class="nav navbar-nav ">
+            <ul class="nav navbar-nav nav-left">
 
                 <li class="nav-item"><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
-                <li class="nav-item"><a class="navbar-brand bigbrand" href="{% url 'about' %}">About</a></li>
-                <li class="nav-item"><a class="navbar-brand bigbrand" href="https://www.github.com">Github</a></li>
-                <li class="nav-item"><a class="navbar-brand bigbrand" href="https://www.linkedin.com">Linkedin</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="https://www.github.com">Github</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com">Linkedin</a></li>
             </ul>
 
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav nav-right">
                 {% if user.is_authenticated %}
-                <li><a class="nav-item" href="{% url 'post_new' %}">New Post</a></li>
-                <li><a class="nav-item" href="{% url 'post_draft_list' %}">Drafts</a></li>
-                <li><a class="nav-item" href="{% url 'logout' %}">Log out</a></li>
-                <li><a class="nav-item" href="#">Welcome: {{user.username}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'post_new' %}">New Post</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Log out</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Welcome: {{user.username}}</a></li>
                 {% else %}
                 <li><a class="nav-item" href="{% url 'login' %}"><i class="bi bi-person-circle"></i></a></li>
                 {% endif %}
@@ -58,8 +58,8 @@
 
     <!-- CONTENT BLOCK -->
     <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
                 <div class="blog_posts">
                     {% block content %}
                     {% endblock %}

@@ -29,7 +29,7 @@ class Post(models.Model):
     
     # After we create a post, we want to go back to the post_detail page
     def get_absolute_url(self):
-        return reverse('post_detail',kwargs={'pk':self.post.pk})
+        return reverse('post_detail',kwargs={'pk':self.pk})
     
     def __str__(self):
         return self.title
