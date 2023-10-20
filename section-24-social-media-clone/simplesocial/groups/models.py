@@ -11,7 +11,7 @@ User = get_user_model() # This is a way to get the current user model that is ac
 from django import template
 register = template.Library() # This is a way to register custom template tags
 
-class Group(models.model):
+class Group(models.Model):
     name = models.CharField(max_length=255,unique=True)
     slug = models.SlugField(allow_unicode=True,unique=True)
     description = models.TextField(blank=True,default='')
@@ -24,7 +24,7 @@ class Group(models.model):
     def save(self,*args,**kwargs):
         self.slug = slugify(self.name)
         self.description_html = misaka.html(self.description) # This is a way to convert the description to html
-        super().save(*args,**kwargs)  # super is used to call the save method of the parent class, in this case, the parent class is models.model
+        super().save(*args,**kwargs)  # super is used to call the save method of the parent class, in this case, the parent class is models.Model
 
     def get_absolute_url(self):
         return reverse("groups:single", kwargs={"slug": self.slug})

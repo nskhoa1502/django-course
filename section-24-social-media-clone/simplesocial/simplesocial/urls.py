@@ -24,4 +24,6 @@ urlpatterns = [
     re_path(r'^accounts/',include('django.contrib.auth.urls')), # django.contrib.auth.urls is a built in app that connect everything that Django has under the hood to make authentication work ==> We don't need to register user model in admin.py because it's inherited from auth.models.User
     re_path(r'^test/$',views.TestPage.as_view(),name='test'),
     re_path(r'^thanks/$',views.ThanksPage.as_view(),name='thanks'),
+    re_path(r'^posts/',include('posts.urls',namespace='posts')),
+    re_path(r'^groups/',include('groups.urls',namespace='groups')),
 ]
